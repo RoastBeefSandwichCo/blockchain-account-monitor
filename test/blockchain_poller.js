@@ -14,6 +14,8 @@ describe('Blockchain Poller', function() {
   it('accepts a function to call when a block with new transactions is discovered', function(done) {
   
     blockchainPoller.pollForBlocks(function(block, next) {
+      //I THINK I'm in the right place.
+      //Attempt to process transaction (submit deposit), then update position (block hash).
       config.set('lastBlockHash', block.hash);
       next();
       done();
